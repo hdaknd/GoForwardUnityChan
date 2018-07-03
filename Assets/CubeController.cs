@@ -23,4 +23,11 @@ public class CubeController : MonoBehaviour {
                         Destroy (gameObject);
                 }
         }
+
+        void OnCollisionEnter2D(Collision2D other) {
+          if (other.gameObject.tag == "GroundTag" ||  other.gameObject.tag == "CubeTag" ) {
+            // 効果音を再生する
+            GetComponent<AudioSource> ().Play();
+          } 
+        }
 }
